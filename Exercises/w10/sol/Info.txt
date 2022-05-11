@@ -1,0 +1,20 @@
+There are 2 solutions for you look at.
+
+unBatched solution:
+The unbatched solution trains an LSTM on one sentence at a time.
+This the solution from last year
+
+Batched solution:
+This year I (DJ) have modified the unbatched solution to enable one to train LSTM on a batch of sequences instead of just 1 sequence at a time. I've made some other minor changes as well. For example the forward pass of RNN doesn't have a for loop in this solution. The sequence and batches are instead flattened out before they are passed to the next layer. The reason for this change is that for loops are in general very slow in machine learning framework and one should  let the framework run the loops if and when required and possible. Other small changes include using PyTorch's inbuilt one hot encoding function, changing the optimizer cuz SGD didn't seem to be working for batched input, etc.
+
+After epoch 4, the batched solution generated the following text:
+
+Binter. The conto here.
+GORE: And the now moning to reand in the we to the sill to sormand thing. I want the saprite of the comtined now aitelate the courd on selpaated and here.
+Dither the man be wand the beander to this of the parter the shoons the got the shander it aroted aptaons
+Binter in the to sulr the shound of the lease for that it the prost lest and on the fant prose.
+Jir. We mave his so for the promentered we save as you inderstical derest thear you so what apring of the batent thear as and sirte the peptare me will be dinging bedard on the taptain and on the show on here. Are been we pronged we ance the pantered. Ane and the thing the prease come for mace can ond the seppopel. You the shid. Se felad me do conderd in the camert. You all got on think we induntersing were dealy we wand do the somentien as the saptang we was sastreds that to mater.
+LARAE: I sourd the know the dind and the sorse the dingt.
+MCCOY: Spock
+TORAN: We the has to the that say the sever medorad the loge with the anserserong wound you the cark to the nosure the man.
+SPOCK: Lengent.
